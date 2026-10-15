@@ -1,0 +1,32 @@
+# Saida de compilacao
+out/
+bin/
+*.class
+
+# Javadoc gerado
+doc/
+
+# IntelliJ IDEA: arquivos pessoais (o restante da .idea/ e versionado
+# para que o projeto abra com src como Sources Root)
+.idea/workspace.xml
+.idea/shelf/
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.local.xml
+.idea/queries/
+*.iws
+
+# Eclipse
+.metadata/
+.settings/
+.classpath
+.project
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
