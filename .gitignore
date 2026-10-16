@@ -3,9 +3,6 @@ out/
 bin/
 *.class
 
-# Javadoc gerado
-doc/
-
 # IntelliJ IDEA: arquivos pessoais (o restante da .idea/ e versionado
 # para que o projeto abra com src como Sources Root)
 .idea/workspace.xml
