@@ -1,4 +1,4 @@
-package br.com.fiap.motiva;
+package br.com.fiap.motiva.model;
 
 /**
  * Estacao do metro onde ficam as escadas rolantes

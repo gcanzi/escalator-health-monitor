@@ -1,4 +1,6 @@
-package br.com.fiap.motiva;
+package br.com.fiap.motiva.model;
+
+import br.com.fiap.motiva.enums.NivelAlerta;
 
 /**
  * Leitura dos sensores de uma escada rolante

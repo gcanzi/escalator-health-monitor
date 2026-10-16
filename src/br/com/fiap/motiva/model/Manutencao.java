@@ -1,4 +1,4 @@
-package br.com.fiap.motiva;
+package br.com.fiap.motiva.model;
 
 /**
  * Manutencao de uma escada rolante, preventiva ou aberta por causa de um alerta

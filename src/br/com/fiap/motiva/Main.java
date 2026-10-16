@@ -1,5 +1,12 @@
 package br.com.fiap.motiva;
 
+import br.com.fiap.motiva.model.EscadaRolante;
+import br.com.fiap.motiva.model.Equipamento;
+import br.com.fiap.motiva.model.Estacao;
+import br.com.fiap.motiva.model.Leitura;
+import br.com.fiap.motiva.model.Linha;
+import br.com.fiap.motiva.model.Manutencao;
+
 import java.util.ArrayList;
 
 /**

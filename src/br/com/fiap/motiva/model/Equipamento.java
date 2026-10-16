@@ -1,4 +1,6 @@
-package br.com.fiap.motiva;
+package br.com.fiap.motiva.model;
+
+import br.com.fiap.motiva.enums.NivelAlerta;
 
 /**
  * Equipamento instalado em uma estacao do metro

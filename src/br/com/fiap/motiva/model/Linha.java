@@ -1,4 +1,4 @@
-package br.com.fiap.motiva;
+package br.com.fiap.motiva.model;
 
 /**
  * Linha do metro

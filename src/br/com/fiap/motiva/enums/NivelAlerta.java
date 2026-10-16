@@ -1,4 +1,4 @@
-package br.com.fiap.motiva;
+package br.com.fiap.motiva.enums;
 
 /**
  * Nivel de alerta de uma leitura da escada rolante.
