@@ -1,7 +1,5 @@
 # Escalator Health Monitor
 
-Projeto Java do Challenge Motiva (FIAP 2026/2027), disciplina Domain Driven Design.
-
 O sistema registra as leituras dos sensores das escadas rolantes do metrô e abre uma manutenção automaticamente quando alguma leitura indica problema.
 
 ## Como funciona
