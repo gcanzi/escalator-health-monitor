@@ -29,12 +29,21 @@ public class EscadaRolante extends Equipamento {
     }
 
     /**
-     * Registra uma leitura ja criada
+     * Registra uma leitura ja criada e abre uma manutencao se ela gerar alerta
+     * (URGENTE para nivel critico e PROGRAMADA para nivel de atencao)
      *
-     * @param leitura leitura dos sensores
+     * @param leitura
      */
     public void registrarLeitura(Leitura leitura) {
         leituras.add(leitura);
+
+        NivelAlerta nivel = leitura.getNivelAlerta();
+        String descricao = "Verificar " + leitura.descreverProblema();
+        if (nivel == NivelAlerta.CRITICO) {
+            manutencoes.add(new Manutencao(leitura.getDataHora(), descricao, "A definir", "URGENTE"));
+        } else if (nivel == NivelAlerta.ATENCAO) {
+            manutencoes.add(new Manutencao(leitura.getDataHora(), descricao, "A definir", "PROGRAMADA"));
+        }
     }
 
     /**
@@ -52,7 +61,7 @@ public class EscadaRolante extends Equipamento {
      */
     public void registrarLeitura(String dataHora, double vibracao, double temperatura, double corrente,
                                  double tensao, double nivelOleo, double velocidade) {
-        leituras.add(new Leitura(dataHora, vibracao, temperatura, corrente, tensao, nivelOleo, velocidade));
+        registrarLeitura(new Leitura(dataHora, vibracao, temperatura, corrente, tensao, nivelOleo, velocidade));
     }
 
     /**

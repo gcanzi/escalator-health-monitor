@@ -99,6 +99,28 @@ public class Leitura {
     }
 
     /**
+     * Descreve quais valores da leitura passaram do limite de atencao
+     *
+     * @return texto com os problemas encontrados, ou "sem problemas"
+     */
+    public String descreverProblema() {
+        String problema = "";
+        if (temperatura > 70) {
+            problema = problema + "temperatura alta, ";
+        }
+        if (vibracao > 4.5) {
+            problema = problema + "vibracao alta, ";
+        }
+        if (nivelOleo < 40) {
+            problema = problema + "oleo baixo, ";
+        }
+        if (problema.isEmpty()) {
+            return "sem problemas";
+        }
+        return problema.substring(0, problema.length() - 2);
+    }
+
+    /**
      * Mostra os valores da leitura em uma linha
      *
      * @return texto com os dados da leitura
