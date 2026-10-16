@@ -1,5 +1,7 @@
 package br.com.fiap.motiva;
 
+import br.com.fiap.motiva.enums.SentidoMovimento;
+import br.com.fiap.motiva.enums.TipoManutencao;
 import br.com.fiap.motiva.model.EscadaRolante;
 import br.com.fiap.motiva.model.Equipamento;
 import br.com.fiap.motiva.model.Estacao;
@@ -31,13 +33,13 @@ public class Main {
         Estacao fariaLima = new Estacao(2, "Faria Lima", linha4);
         Estacao santoAmaro = new Estacao(3, "Santo Amaro", linha5);
 
-        EscadaRolante escada1 = new EscadaRolante(101, "Otis", paulista, "SUBIDA");
-        EscadaRolante escada2 = new EscadaRolante(102, "Schindler", paulista, "DESCIDA");
-        EscadaRolante escada3 = new EscadaRolante(201, "TK Elevator", fariaLima, "SUBIDA");
-        EscadaRolante escada4 = new EscadaRolante(301, "Otis", santoAmaro, "DESCIDA");
+        EscadaRolante escada1 = new EscadaRolante(101, "Otis", paulista, SentidoMovimento.SUBIDA);
+        EscadaRolante escada2 = new EscadaRolante(102, "Schindler", paulista, SentidoMovimento.DESCIDA);
+        EscadaRolante escada3 = new EscadaRolante(201, "TK Elevator", fariaLima, SentidoMovimento.SUBIDA);
+        EscadaRolante escada4 = new EscadaRolante(301, "Otis", santoAmaro, SentidoMovimento.DESCIDA);
 
         // manutencao preventiva feita antes das leituras
-        escada1.adicionarManutencao(new Manutencao("01/10/2026", "Lubrificacao preventiva", "Ana Lima", "PREVENTIVA"));
+        escada1.adicionarManutencao(new Manutencao("01/10/2026", "Lubrificacao preventiva", "Ana Lima", TipoManutencao.PREVENTIVA));
 
         // escada 101: saudavel, nao abre manutencao
         Leitura leitura = new Leitura("15/10/2026 08:00", 1.8, 55, 24.5, 381, 85, 0.5);

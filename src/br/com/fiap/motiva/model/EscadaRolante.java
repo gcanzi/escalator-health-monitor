@@ -1,6 +1,8 @@
 package br.com.fiap.motiva.model;
 
 import br.com.fiap.motiva.enums.NivelAlerta;
+import br.com.fiap.motiva.enums.SentidoMovimento;
+import br.com.fiap.motiva.enums.TipoManutencao;
 
 import java.util.ArrayList;
 
@@ -13,7 +15,7 @@ import java.util.ArrayList;
  */
 public class EscadaRolante extends Equipamento {
 
-    private String sentido;
+    private SentidoMovimento sentido;
     private ArrayList<Leitura> leituras = new ArrayList<>();
     private ArrayList<Manutencao> manutencoes = new ArrayList<>();
 
@@ -25,7 +27,7 @@ public class EscadaRolante extends Equipamento {
      * @param estacao
      * @param sentido
      */
-    public EscadaRolante(int id, String fabricante, Estacao estacao, String sentido) {
+    public EscadaRolante(int id, String fabricante, Estacao estacao, SentidoMovimento sentido) {
         super(id, fabricante, estacao);
         this.sentido = sentido;
     }
@@ -42,9 +44,9 @@ public class EscadaRolante extends Equipamento {
         NivelAlerta nivel = leitura.getNivelAlerta();
         String descricao = "Verificar " + leitura.descreverProblema();
         if (nivel == NivelAlerta.CRITICO) {
-            manutencoes.add(new Manutencao(leitura.getDataHora(), descricao, "A definir", "URGENTE"));
+            manutencoes.add(new Manutencao(leitura.getDataHora(), descricao, "A definir", TipoManutencao.URGENTE));
         } else if (nivel == NivelAlerta.ATENCAO) {
-            manutencoes.add(new Manutencao(leitura.getDataHora(), descricao, "A definir", "PROGRAMADA"));
+            manutencoes.add(new Manutencao(leitura.getDataHora(), descricao, "A definir", TipoManutencao.PROGRAMADA));
         }
     }
 
@@ -133,11 +135,11 @@ public class EscadaRolante extends Equipamento {
         }
     }
 
-    public String getSentido() {
+    public SentidoMovimento getSentido() {
         return sentido;
     }
 
-    public void setSentido(String sentido) {
+    public void setSentido(SentidoMovimento sentido) {
         this.sentido = sentido;
     }
 

@@ -1,5 +1,7 @@
 package br.com.fiap.motiva.model;
 
+import br.com.fiap.motiva.enums.TipoManutencao;
+
 /**
  * Manutencao de uma escada rolante, preventiva ou aberta por causa de um alerta
  *
@@ -12,7 +14,7 @@ public class Manutencao {
     private String data;
     private String descricao;
     private String tecnico;
-    private String urgencia;
+    private TipoManutencao tipo;
 
     /**
      * Cria o registro de uma manutencao
@@ -20,13 +22,13 @@ public class Manutencao {
      * @param data
      * @param descricao
      * @param tecnico
-     * @param urgencia
+     * @param tipo
      */
-    public Manutencao(String data, String descricao, String tecnico, String urgencia) {
+    public Manutencao(String data, String descricao, String tecnico, TipoManutencao tipo) {
         this.data = data;
         this.descricao = descricao;
         this.tecnico = tecnico;
-        this.urgencia = urgencia;
+        this.tipo = tipo;
     }
 
     public String getData() {
@@ -49,12 +51,12 @@ public class Manutencao {
         this.tecnico = tecnico;
     }
 
-    public String getUrgencia() {
-        return urgencia;
+    public TipoManutencao getTipo() {
+        return tipo;
     }
 
-    public void setUrgencia(String urgencia) {
-        this.urgencia = urgencia;
+    public void setTipo(TipoManutencao tipo) {
+        this.tipo = tipo;
     }
 
     /**
@@ -64,6 +66,6 @@ public class Manutencao {
      */
     @Override
     public String toString() {
-        return "Manutencao [" + urgencia + "] " + data + ": " + descricao + " (" + tecnico + ")";
+        return "Manutencao [" + tipo + "] " + data + ": " + descricao + " (" + tecnico + ")";
     }
 }
